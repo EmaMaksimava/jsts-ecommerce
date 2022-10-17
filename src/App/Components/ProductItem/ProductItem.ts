@@ -1,11 +1,17 @@
+import { Product } from "../../Interfaces/Product";
+
 export class ProductItem {
+
+  constructor(private product: Product) {
+
+  }
 
   render() {
     return `
     <div>
-      <image>
-      <h3>Product name</h3>
-      <p>Price</p>
+      <img src="${this.product.image}" alt="${this.product.name}">
+      <h3>${this.product.name}</h3>
+      <p>${this.product.price}</p>
     </div>
     `
   }
