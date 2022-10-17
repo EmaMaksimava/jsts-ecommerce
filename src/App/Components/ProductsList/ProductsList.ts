@@ -1,6 +1,7 @@
 import { productsModel } from "../../Models/ProductsModel";
 import { ProductItem } from "../ProductItem";
 import { Product } from "../../Interfaces/Product";
+import { appStore } from "../../Store/AppStore";
 
 
 
@@ -22,10 +23,14 @@ export class ProductsList {
       .catch((error) => {
         this.error = error;
       })
+      .finally(() => {
+        this.loading = false;
+        appStore.$render.next(true);
+      })
   }
 
   render() {
-    return `<h2> Product title</h2>
+    return `<h2> Mango for women </h2>
     ${this.products
       .map((product) => new ProductItem(product))
       .map(product => product.render())

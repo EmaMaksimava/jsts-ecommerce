@@ -6,7 +6,7 @@ export class App {
 
   render() {
     return `
-    <h1>App E-Commerce</h1>
+    <h1>Mango Outlet</h1>
     <div>
       ${this.productList.render()}
     </div>
