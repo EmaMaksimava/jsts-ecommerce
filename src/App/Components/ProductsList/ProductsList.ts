@@ -30,12 +30,15 @@ export class ProductsList {
   }
 
   render() {
-    return `<h2> Mango for women </h2>
+    return `<h2> Fashion for woman </h2>
     ${this.products
       .map((product) => new ProductItem(product))
       .map(product => product.render())
       .join('')}
-    ${this.loading ? '<p>Loading...</p>' : '' }
+    ${this.loading ? `
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>` : '' }
     ${this.error ? `<p>${this.error?.message}</p>` : '' }
     <div>
       <button>prev</button>
