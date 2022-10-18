@@ -8,7 +8,7 @@ export class ProductItem {
 
   render() {
     return `
-    <div class="card" style="width: 18rem; margin: 1rem">
+    <div class="card shadow-sm p-3 mb-5 bg-body rounded" style="width: 18rem; margin: 1rem">
       <img src="${this.product.image}" class="card-img-top" alt="${this.product.name}">
       <div class="card-body">
         <h5 class="card-title">${this.product.name}</h5>
