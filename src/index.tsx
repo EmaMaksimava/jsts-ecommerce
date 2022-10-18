@@ -13,6 +13,6 @@ if(!root) {
 
 root.innerHTML = app.render();
 
-appStore.$render.subscribe(() => {
+appStore.$state.subscribe(() => {
   root.innerHTML = app.render();
 });

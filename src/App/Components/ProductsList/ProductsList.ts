@@ -11,21 +11,24 @@ export class ProductsList {
   private products: Product[] = [];
 
   constructor() {
-    this.fetchProducts()
+    this.fetchProducts();
+    appStore.$state.subscribe(({ products }) => {
+      this.products = products;
+
+      if(products.length) {
+        this.error = null;
+        this.loading = false;
+      }
+    })
   }
 
   fetchProducts() {
     this.loading = true;
+    appStore.update({});
     productsModel.getProducts()
-      .then((products) => {
-        this.products = products;
-      })
       .catch((error) => {
         this.error = error;
-      })
-      .finally(() => {
         this.loading = false;
-        appStore.$render.next(true);
       })
   }
 
