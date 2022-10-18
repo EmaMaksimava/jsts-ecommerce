@@ -1,12 +1,14 @@
 import { Product } from "../Interfaces/Product";
 
+export interface CartProducts {
+  [key: string]: {
+    amount: number;
+    product: Product;
+  }
+}
+
 export interface Cart {
-  products: {
-    [key: string]: {
-      amount: number;
-      product: Product;
-    }
-  };
+  products: CartProducts;
 };
 
 export interface State {
