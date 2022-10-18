@@ -31,18 +31,25 @@ export class ProductsList {
 
   render() {
     return `<h2> Fashion for woman </h2>
-    ${this.products
-      .map((product) => new ProductItem(product))
-      .map(product => product.render())
-      .join('')}
+    <div style="display:flex; flex-wrap: wrap">
+      ${this.products
+        .map((product) => new ProductItem(product))
+        .map(product => product.render())
+        .join('')}
+    </div>
+
     ${this.loading ? `
-      <div class="spinner-border" role="status">
+      <div class="spinner-border text-warning" role="status">
         <span class="visually-hidden">Loading...</span>
       </div>` : '' }
-    ${this.error ? `<p>${this.error?.message}</p>` : '' }
+    ${this.error ? `
+      <div class="alert alert-warning" role="alert">
+      ${this.error?.message}
+      </div>
+      ` : '' }
     <div>
-      <button>prev</button>
-      <button>next</button>
+      <button type="button" class="btn btn-outline-secondary">Previous</button>
+      <button type="button" class="btn btn-outline-secondary">Next</button>
     </div>
     `;
 

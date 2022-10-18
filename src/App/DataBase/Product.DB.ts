@@ -46,6 +46,38 @@ const PRODUCTS: Product[] = [
     price: 165,
   },
 
+  {
+    id: 7,
+    name: 'KAMIZELKI',
+    image: 'https://st.mngbcn.com/rcs/pics/static/T8/fotos/outfit/S20/87053267_81-99999999_01.jpg?ts=1610636719819&imwidth=502&imdensity=2',
+    favorite: false,
+    price: 40,
+  },
+
+  {
+    id: 8,
+    name: 'Satynowa bluzka z poduszkami na ramionach',
+    image: 'https://st.mngbcn.com/rcs/pics/static/T1/fotos/S20/17099076_61.jpg?ts=1631515713003&imwidth=502&imdensity=2',
+    favorite: false,
+    price: 26,
+  },
+
+  {
+    id: 9,
+    name: 'Dżinsy Balloon z wysokim stanem',
+    image: 'https://st.mngbcn.com/rcs/pics/static/T8/fotos/S20/87002889_TS.jpg?ts=1620031183562&imwidth=502&imdensity=2',
+    favorite: false,
+    price: 28,
+  },
+
+  {
+    id: 10,
+    name: 'Skórzane szpilki',
+    image: 'https://st.mngbcn.com/rcs/pics/static/T1/fotos/S20/17020153_99.jpg?ts=1617702092608&imwidth=502&imdensity=2',
+    favorite: false,
+    price: 140,
+  },
+
 ];
 
 export const getProducts = ():Promise<Product[]> => {
