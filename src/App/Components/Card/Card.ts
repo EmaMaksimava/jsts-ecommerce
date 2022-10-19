@@ -1,7 +1,8 @@
+import { AppComponent } from "../../Interfaces/AppComponent";
 import { appStore } from "../../Store/AppStore";
 import { CartProducts } from "../../Store/State";
 
-export class Card {
+export class Card implements AppComponent {
 
   private cartProducts: CartProducts = {};
   private sumPrice = 0;
@@ -42,5 +43,9 @@ export class Card {
                    fw-bold"> Summary: ${this.amount} products, ${this.sumPrice} zl </li>
     </div>
     `;
+  }
+
+  addEvents() {
+    
   }
 }
